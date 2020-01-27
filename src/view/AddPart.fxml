@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="420.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="420.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Add Part" textFill="#0000fa">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="320.0">
+                     <children>
+                        <RadioButton fx:id="inHouseRBtn" mnemonicParsing="false" onAction="#setVarField" text="In-House">
+                           <padding>
+                              <Insets right="30.0" />
+                           </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="inHouseOrOutsourcedTG" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="OutsourcedRBtn" mnemonicParsing="false" onAction="#setVarField" selected="true" text="Outsourced" toggleGroup="$inHouseOrOutsourcedTG" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane prefHeight="240.0" prefWidth="420.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="173.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="247.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="ID">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Inv" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Price/Cost" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="AddPartIdTxt" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="130.0" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" />
+                        <TextField fx:id="AddPartNameTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="130.0" promptText="Part Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="AddInvTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="130.0" promptText="Inv" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="AddPriceTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="130.0" promptText="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="175.0">
+                     <children>
+                        <Label text="Max">
+                           <VBox.margin>
+                              <Insets left="60.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="34.0" prefWidth="107.0">
+                     <children>
+                        <TextField fx:id="AddMaxTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="83.0" promptText="Max" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="29.0">
+                     <children>
+                        <Label text="Min" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="AddMinTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="83.0" promptText="Min" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="containerCompMach" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="175.0">
+                     <children>
+                        <Label fx:id="compNameLbl" text="Company Name">
+                           <VBox.margin>
+                              <Insets left="60.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="245.0">
+                     <children>
+                        <TextField fx:id="varFieldTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Comp Nm" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="420.0">
+               <children>
+                  <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionSavePart" prefWidth="75.0" text="Save">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" prefWidth="75.0" text="Cancel">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
